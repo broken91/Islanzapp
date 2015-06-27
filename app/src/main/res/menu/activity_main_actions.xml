@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.rubendario.islanzapp.MapsActivity" >
+    //Boton de Moderador
+    <item android:id="@+id/action_moderador"
+        android:icon="@drawable/ic_headset_mic_white_24dp"
+        android:title="@string/action_moderador"
+        app:showAsAction="ifRoom"
+        android:visible="true"/>
     // Boton de Buscar
     <item android:id="@+id/search_button"
         android:icon="@drawable/ic_search_white_24dp"
@@ -15,10 +21,6 @@
           android:title="@string/action_settings"
           app:showAsAction="ifRoom"
           android:visible="true"/>
-    <item android:id="@+id/action_moderador"
-        android:icon="@drawable/ic_headset_mic_white_24dp"
-        android:title="@string/action_moderador"
-        app:showAsAction="ifRoom"
-        android:visible="true"/>
+
 
 </menu>
