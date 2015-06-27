@@ -7,19 +7,25 @@
     <item android:id="@+id/action_moderador"
         android:icon="@drawable/ic_headset_mic_white_24dp"
         android:title="@string/action_moderador"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
+        android:visible="true"/>
+    //Boton de Bitacora
+    <item android:id="@+id/action_Bitacora"
+        android:icon="@drawable/ic_list_white_24dp"
+        android:title="@string/action_Bitacora"
+        app:showAsAction="always"
         android:visible="true"/>
     // Boton de Buscar
     <item android:id="@+id/search_button"
         android:icon="@drawable/ic_search_white_24dp"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:title="@string/action_search"
         android:visible="true"/>
     // Boton de configuracion
     <item android:id="@+id/action_settings"
           android:icon="@drawable/ic_settings_white_24dp"
           android:title="@string/action_settings"
-          app:showAsAction="ifRoom"
+          app:showAsAction="always"
           android:visible="true"/>
 
 
