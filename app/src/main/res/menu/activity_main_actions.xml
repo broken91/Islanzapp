@@ -3,9 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.rubendario.islanzapp.MapsActivity" >
+    // Boton de Buscar
     <item android:id="@+id/search_button"
         android:icon="@drawable/ic_search_white_24dp"
         app:showAsAction="ifRoom"
         android:title="@string/action_search"
         android:visible="true"/>
+    // Boton de configuracion
+    <item android:id="@+id/action_settings"
+          android:icon="@drawable/ic_search_white_24dp"
+          android:title="@string/action_settings"
+          app:showAsAction="ifRoom"
+          android:visible="true"/>
+
 </menu>

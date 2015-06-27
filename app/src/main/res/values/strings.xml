@@ -4,5 +4,6 @@
     <string name="app_name">Islanzapp</string>
     <string name="title_activity_maps">Islanzapp</string>
     <string name="action_search">Searchybyby</string>
+    <string name ="action_settings">sBdConfiguracion</string>
 
 </resources>
