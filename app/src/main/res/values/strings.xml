@@ -5,5 +5,6 @@
     <string name="title_activity_maps">Islanzapp</string>
     <string name="action_search">Searchybyby</string>
     <string name ="action_settings">sBdConfiguracion</string>
+    <string name="action_moderador">Moderador</string>
 
 </resources>
