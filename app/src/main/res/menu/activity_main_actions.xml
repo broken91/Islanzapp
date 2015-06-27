@@ -11,9 +11,14 @@
         android:visible="true"/>
     // Boton de configuracion
     <item android:id="@+id/action_settings"
-          android:icon="@drawable/ic_search_white_24dp"
+          android:icon="@drawable/ic_settings_white_24dp"
           android:title="@string/action_settings"
           app:showAsAction="ifRoom"
           android:visible="true"/>
+    <item android:id="@+id/action_moderador"
+        android:icon="@drawable/ic_headset_mic_white_24dp"
+        android:title="@string/action_moderador"
+        app:showAsAction="ifRoom"
+        android:visible="true"/>
 
 </menu>
