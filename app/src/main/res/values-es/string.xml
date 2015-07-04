@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Islanzapp</string>
+    <string name="title_activity_maps">Islanzapp</string>
+    <string name="action_search">Buscar</string>
+    <string name ="action_settings">Configuración</string>
+    <string name="action_moderador">Moderador</string>
+    <string name="action_Bitacora">Bitácora</string>
+    <string name="action_group">Sugerencias</string>
+    <string name="action_rate">Favoritos</string>
+    <string name="action_like">Calificar</string>
+    <string name="action_mute">Sin Sonido</string>
+    <string name="action_volume_up">Sonido</string>
+    <string name="Action_turorial">Tutorial</string>
+    <string name="Action_language">Lenguaje</string>
+
+    <string name="message">La isla mas bonita del mundo</string>
+
+</resources>

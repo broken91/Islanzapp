@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_people"
+        android:icon="@drawable/ic_group_white_24dp"
+        android:title="@string/action_group"
+        app:showAsAction="always"
+        android:gravity="left"
+        android:visible="true"/>
+
+    <item android:id="@+id/menu_rate"
+    android:icon="@drawable/ic_star_white_24dp"
+    android:title="@string/action_rate"
+    app:showAsAction="always"
+    android:gravity="left"
+    android:visible="true"/>
+
+    <item android:id="@+id/menu_like"
+        android:icon="@drawable/ic_thumb_up_white_24dp"
+        android:title="@string/action_like"
+        app:showAsAction="always"
+        android:gravity="left"
+        android:visible="true"/>
+</menu>

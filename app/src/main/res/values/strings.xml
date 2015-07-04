@@ -3,9 +3,19 @@
 
     <string name="app_name">Islanzapp</string>
     <string name="title_activity_maps">Islanzapp</string>
-    <string name="action_search">Searchybyby</string>
-    <string name ="action_settings">sBdConfiguracion</string>
-    <string name="action_moderador">Moderador</string>
-    <string name="action_Bitacora">Bitacora</string>
+    <string name="action_search">Search</string>
+    <string name ="action_settings">Settings</string>
+    <string name="action_moderador">Moderator</string>
+    <string name="action_Bitacora">Binnacle</string>
+    <string name="action_group">Suggestions</string>
+    <string name="action_rate">Favorites</string>
+    <string name="action_like">Rate</string>
+    <string name="action_mute">Mute</string>
+    <string name="action_volume_up">Sound</string>
+    <string name="Action_turorial">Tutorial</string>
+    <string name="Action_language">Language</string>
+
+    <string name="message">The most beautiful isle on the world</string>
+
 
 </resources>

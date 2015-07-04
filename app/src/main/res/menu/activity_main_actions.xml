@@ -9,6 +9,8 @@
         android:title="@string/action_moderador"
         app:showAsAction="always"
         android:visible="true"/>
+
+
     //Boton de Bitacora
     <item android:id="@+id/action_Bitacora"
         android:icon="@drawable/ic_list_white_24dp"
