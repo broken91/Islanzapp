@@ -15,7 +15,13 @@
     <string name="Action_turorial">Tutorial</string>
     <string name="Action_language">Language</string>
 
-    <string name="message">The most beautiful isle on the world</string>
+    <string name="message">The most beautiful island on the world</string>
 
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_navigation_white_24dp</item>
+        <item>@drawable/ic_directions_bus_white_24dp</item>
+        <item>@drawable/ic_place_white_24dp</item>
+        <item>@drawable/ic_access_time_white_24dp</item>
+    </array>
 
 </resources>

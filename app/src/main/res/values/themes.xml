@@ -10,13 +10,30 @@
         parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="android:actionBarStyle">@style/MyActionBar</item>
     <item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
-    <item name="android:spinnerStyle">@android:style/Widget.Holo.Spinner</item>
     <item name="android:actionMenuTextColor">@color/actionbar_text</item>
+
+
+    <item name="android:dropDownListViewStyle">@style/PopupMenuListView</item>
+        <item name="android:actionBarWidgetTheme">@style/PopupMenuTextView</item>
+    <item name="android:popupMenuStyle">@style/PopupMenu</item>
+
+        <!-- Change Overflow Menu ListView Item Height & Property -->
+        <item name="android:listPreferredItemHeightSmall">45dp</item>
+        <item name="android:listPreferredItemPaddingLeft">45dp</item>
+        <item name="android:listPreferredItemPaddingRight">5dp</item>
 
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="actionBarTabTextStyle">@style/MyActionBarTabText</item>
         <item name="actionMenuTextColor">@color/actionbar_text</item>
+
+        <item name="dropDownListViewStyle">@style/PopupMenuListView</item>
+        <item name="actionBarWidgetTheme">@style/PopupMenuTextView</item>
+        <item name="popupMenuStyle">@style/PopupMenu</item>
+
+        <item name="listPreferredItemHeightSmall">45dp</item>
+        <item name="listPreferredItemPaddingLeft">10dp</item>
+        <item name="listPreferredItemPaddingRight">5dp</item>
     </style>
 
     <!-- ActionBar styles -->
@@ -24,7 +41,6 @@
         parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/actionbar_background</item>
         <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
-
         <!-- Support library compatibility -->
         <item name="background">@color/actionbar_background</item>
         <item name="titleTextStyle">@style/MyActionBarTitleText</item>
@@ -36,11 +52,36 @@
         <item name="android:textColor">@color/actionbar_text</item>
     </style>
 
+    <style name="MyMenuTextColor" parent="Widget.AppCompat.ListView.Menu">
+        <item name="android:textColor">@color/actionbar_text</item>
+    </style>
+
     <!-- ActionBar tabs text -->
     <style name="MyActionBarTabText"
         parent="@style/Widget.AppCompat.ActionBar.TabText">
         <item name="android:textColor">@color/actionbar_text</item>
     </style>
 
+    <!-- Change Overflow Menu ListView Divider Property -->
+    <style name="PopupMenuListView" parent="Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:divider">@color/actionbar_background</item>
+        <item name="android:background">@color/actionbar_background</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:dividerHeight">2dp</item>
+        <item name="android:textColor">#00FF00</item>
+    </style>
+
+    <!-- Change Overflow Menu ListView Text Size and Text Size -->
+    <style name="PopupMenuTextView" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:textSize">28dp</item>
+    </style>
+
+    <!-- Change Overflow Menu Background -->
+    <style name="PopupMenu" parent="Widget.AppCompat.Light.ListPopupWindow">
+        <item name="android:popupBackground">@color/actionbar_background</item>
+        <item name="android:columnWidth">10dp</item>
+        <item name="android:textColor">#00FF00</item>
+    </style>
 
 </resources>
