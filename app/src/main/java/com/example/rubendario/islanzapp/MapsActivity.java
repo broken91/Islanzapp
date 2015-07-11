@@ -1,36 +1,92 @@
 package com.example.rubendario.islanzapp;
 
 import android.app.ActionBar;
+import android.content.res.TypedArray;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.internal.view.menu.ActionMenuItemView;
+import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MapsActivity extends ActionBarActivity {
 
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    private CharSequence mTitle;
     private GoogleMap mMap;
-    android.support.v7.app.ActionBar bar;// Might be null if Google Play services APK is not available.
+
+    private TypedArray navMenuIcons;
+
+    private ArrayList<NavDrawerItem> navDrawerItems;
+    private NavDrawerListAdapter adapter;
+
+    //android.support.v7.app.ActionBar bar;// Might be null if Google Play services APK is not available.
 //Hola
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        bar = this.getSupportActionBar();
+        //bar = this.getSupportActionBar();
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_launcher);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        navMenuIcons = getResources()
+                .obtainTypedArray(R.array.nav_drawer_icons);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        navDrawerItems = new ArrayList<NavDrawerItem>();
+
+
+        navDrawerItems.add(new NavDrawerItem("", navMenuIcons.getResourceId(0, -1)));
+        // Find People
+        navDrawerItems.add(new NavDrawerItem("", navMenuIcons.getResourceId(1, -1)));
+        // Photos
+        navDrawerItems.add(new NavDrawerItem("", navMenuIcons.getResourceId(2, -1)));
+        // Communities, Will add a counter here
+        navDrawerItems.add(new NavDrawerItem("", navMenuIcons.getResourceId(3, -1)));
+        // Pages
+        navDrawerItems.add(new NavDrawerItem("", navMenuIcons.getResourceId(4, -1)));
+        // What's hot, We  will add a counter here
+        navDrawerItems.add(new NavDrawerItem("", navMenuIcons.getResourceId(5, -1)));
+
+
+        // Recycle the typed array
+        navMenuIcons.recycle();
+        // Set the adapter for the list view
+        adapter = new NavDrawerListAdapter(getApplicationContext(),
+                navDrawerItems);
+        mDrawerList.setAdapter(adapter);
+        // Set the list's click listener
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
         initToolbars();
    //     bar.show();
         setUpMapIfNeeded();
@@ -61,7 +117,7 @@ public class MapsActivity extends ActionBarActivity {
                 Toast.makeText(MapsActivity.this, getString(R.string.action_Bitacora), Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_settings:
-                PopupMenu popup = new PopupMenu(bar.getThemedContext(), findViewById(R.id.action_settings));
+                /*PopupMenu popup = new PopupMenu(bar.getThemedContext(), findViewById(R.id.action_settings));
                 popup.getMenuInflater()
                         .inflate(R.menu.pop_up_menu, popup.getMenu());
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -97,7 +153,8 @@ public class MapsActivity extends ActionBarActivity {
         map.addMarker(new MarkerOptions()
                 .title("Lanzarote")
                 .snippet(getString(R.string.message))
-                .position(lanzarote));
+                .position(lanzarote))
+                .setIcon(BitmapDescriptorFactory.fromResource(R.drawable.market1));
     }
 
     //Probando Metodo
@@ -125,6 +182,70 @@ public class MapsActivity extends ActionBarActivity {
         });
         // Inflate a menu to be displayed in the toolbar
         toolbarBottom.inflateMenu(R.menu.botton_toolbar);
+        // Add 10 spacing on either side of the toolbar
+        toolbarBottom.setContentInsetsAbsolute(10, 10);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics metrics = new DisplayMetrics();
+        display.getMetrics(metrics);
+
+        // Get the ChildCount of your Toolbar, this should only be 1
+        int childCount = toolbarBottom.getChildCount();
+        // Get the Screen Width in pixels
+        int screenWidth = metrics.widthPixels;
+
+        // Create the Toolbar Params based on the screenWidth
+        Toolbar.LayoutParams toolbarParams = new Toolbar.LayoutParams(screenWidth, Toolbar.LayoutParams.WRAP_CONTENT);
+
+        // Loop through the child Items
+        for(int i = 0; i < childCount; i++){
+            // Get the item at the current index
+            View childView = toolbarBottom.getChildAt(i);
+            // If its a ViewGroup
+            if(childView instanceof ViewGroup){
+                // Set its layout params
+                childView.setLayoutParams(toolbarParams);
+                // Get the child count of this view group, and compute the item widths based on this count & screen size
+                int innerChildCount = ((ViewGroup) childView).getChildCount();
+                int itemWidth  = (screenWidth / innerChildCount);
+                // Create layout params for the ActionMenuView
+                ActionMenuView.LayoutParams params = new ActionMenuView.LayoutParams(itemWidth, Toolbar.LayoutParams.WRAP_CONTENT);
+                // Loop through the children
+                for(int j = 0; j < innerChildCount; j++){
+                    View grandChild = ((ViewGroup) childView).getChildAt(j);
+                    if(grandChild instanceof ActionMenuItemView){
+                        // set the layout parameters on each View
+                        grandChild.setLayoutParams(params);
+                    }
+                }
+            }
+        }
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView parent, View view, int position, long id) {
+            //selectItem(position);
+        }
+    }
+
+    /** Swaps fragments in the main content view */
+    private void selectItem(int position) {
+        // Create a new fragment and specify the planet to show based on position
+
+
+        // Insert the fragment by replacing any existing fragment
+
+
+        // Highlight the selected item, update the title, and close the drawer
+        mDrawerList.setItemChecked(position, true);
+        mDrawerLayout.closeDrawer(mDrawerList);
+    }
+
+    @Override
+    public void setTitle(CharSequence title) {
+        mTitle = title;
+        getActionBar().setTitle(mTitle);
     }
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
