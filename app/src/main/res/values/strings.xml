@@ -10,6 +10,8 @@
     <string name="action_group">Suggestions</string>
     <string name="action_rate">Favorites</string>
     <string name="action_like">Rate</string>
+    <string name="action_share">Share</string>
+    <string name="action_bag">Change Departure</string>
     <string name="action_mute">Mute</string>
     <string name="action_volume_up">Sound</string>
     <string name="Action_turorial">Tutorial</string>
@@ -18,10 +20,11 @@
     <string name="message">The most beautiful island on the world</string>
 
     <array name="nav_drawer_icons">
-        <item>@drawable/ic_navigation_white_24dp</item>
-        <item>@drawable/ic_directions_bus_white_24dp</item>
-        <item>@drawable/ic_place_white_24dp</item>
-        <item>@drawable/ic_access_time_white_24dp</item>
+        <item>@drawable/vias</item>
+        <item>@drawable/paradas</item>
+        <item>@drawable/ubicacion_actual</item>
+        <item>@drawable/top_destinos_frecuentes</item>
+        <item>@drawable/horarios</item>
     </array>
 
 </resources>

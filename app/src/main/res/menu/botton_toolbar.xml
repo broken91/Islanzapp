@@ -2,23 +2,39 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/menu_people"
-        android:icon="@drawable/ic_group_white_24dp"
+        android:icon="@drawable/sugerencias"
         android:title="@string/action_group"
         app:showAsAction="always"
         android:gravity="left"
         android:visible="true"/>
 
     <item android:id="@+id/menu_rate"
-    android:icon="@drawable/ic_star_white_24dp"
+    android:icon="@drawable/favoritos"
     android:title="@string/action_rate"
     app:showAsAction="always"
     android:gravity="left"
     android:visible="true"/>
 
     <item android:id="@+id/menu_like"
-        android:icon="@drawable/ic_thumb_up_white_24dp"
+        android:icon="@drawable/calificar"
         android:title="@string/action_like"
         app:showAsAction="always"
         android:gravity="left"
         android:visible="true"/>
+
+    <item android:id="@+id/menu_bag"
+        android:icon="@drawable/desplazar_ubicacion"
+        android:title="@string/action_bag"
+        app:showAsAction="always"
+        android:gravity="left"
+        android:visible="true"/>
+
+    <item android:id="@+id/menu_share"
+        android:icon="@drawable/compartir"
+        android:title="@string/action_share"
+        app:showAsAction="always"
+        android:gravity="left"
+        android:visible="true"/>
+
+
 </menu>

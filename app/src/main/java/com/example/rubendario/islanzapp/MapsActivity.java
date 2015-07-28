@@ -148,7 +148,7 @@ public class MapsActivity extends ActionBarActivity {
     public void onMapReady(GoogleMap map) {
         LatLng lanzarote = new LatLng(29.0386277,-13.6504782);
         map.clear();
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(lanzarote, 9));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(lanzarote, 10));
 
         map.addMarker(new MarkerOptions()
                 .title("Lanzarote")
@@ -175,6 +175,12 @@ public class MapsActivity extends ActionBarActivity {
                         return true;
                     case R.id.menu_people:
                         Toast.makeText(MapsActivity.this, getString(R.string.action_group), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.menu_bag:
+                        Toast.makeText(MapsActivity.this, getString(R.string.action_bag), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.menu_share:
+                        Toast.makeText(MapsActivity.this, getString(R.string.action_share), Toast.LENGTH_SHORT).show();
                         return true;
                 }
                 return true;
