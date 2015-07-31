@@ -27,4 +27,10 @@
         <item>@drawable/horarios</item>
     </array>
 
+    <!-- pao añadio -->
+    <string name="search_hint">Busca cosas turisticas</string>
+    !-- General instructions in the main activity. -->
+    <string name="search_instructions">Use the search box in the Action Bar to look up a word</string>
+    <!-- hasta aqui -->
+
 </resources>

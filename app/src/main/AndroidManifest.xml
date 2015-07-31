@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rubendario.islanzapp" >
+    package="com.example.rubendario.islanzapp"
+    android:installLocation="preferExternal">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -43,6 +44,17 @@
             android:logo="@drawable/ic_launcher"
             android:label="@string/title_activity_maps">
         </activity>
+
+        <!-- Pao añadio -->
+        <activity android:name=".SearchableActivity"
+            android:label="@string/action_search">
+        <intent-filter>
+                <action android:name="android.intent.action.search" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+        <!-- Hasta aqui -->
     </application>
 
 </manifest>

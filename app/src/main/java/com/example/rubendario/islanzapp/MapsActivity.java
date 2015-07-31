@@ -1,6 +1,7 @@
 package com.example.rubendario.islanzapp;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -108,7 +109,13 @@ public class MapsActivity extends ActionBarActivity {
 
         switch (item.getItemId()) {
             case R.id.search_button:
-                Toast.makeText(MapsActivity.this, getString(R.string.action_search), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MapsActivity.this, getString(R.string.action_search), Toast.LENGTH_SHORT).show();
+                //Pao añadio
+                Intent i = new Intent(MapsActivity.this, SearchableActivity.class);
+                startActivity(i);
+
+                //finish();
+                //hasta aqui
                 return true;
             case R.id.action_moderador:
                 Toast.makeText(MapsActivity.this, getString(R.string.action_moderador), Toast.LENGTH_SHORT).show();
