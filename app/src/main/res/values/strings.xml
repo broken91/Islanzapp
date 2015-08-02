@@ -16,8 +16,34 @@
     <string name="action_volume_up">Sound</string>
     <string name="Action_turorial">Tutorial</string>
     <string name="Action_language">Language</string>
+    <string name="No_data">No Data</string>
 
     <string name="message">The most beautiful island on the world</string>
+
+    <string-array name="header_items">
+        <item>Museums</item>
+        <item>Beaches</item>
+        <item>Interesting Places</item>
+    </string-array>
+
+    <string-array name="child_museums">
+        <item>Architecture Museum</item>
+        <item>Future Museum</item>
+        <item>Dog Museum</item>
+    </string-array>
+
+    <string-array name="child_beaches">
+        <item>La Loca Beach</item>
+        <item>Blanca Beach</item>
+        <item>Dog Beach</item>
+    </string-array>
+
+    <string-array name="child_places">
+        <item>Ice cream shop</item>
+        <item>Main Square</item>
+        <item>Market</item>
+    </string-array>
+
 
     <array name="nav_drawer_icons">
         <item>@drawable/vias</item>

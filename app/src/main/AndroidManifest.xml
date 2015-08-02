@@ -43,6 +43,15 @@
             android:logo="@drawable/ic_launcher"
             android:label="@string/title_activity_maps">
         </activity>
+
+        <activity android:name=".BinnacleList"
+            android:parentActivityName=".MapsActivity"
+            android:theme="@style/CustomActionBarTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MapsActivity"/>
+        </activity>
+
     </application>
 
 </manifest>

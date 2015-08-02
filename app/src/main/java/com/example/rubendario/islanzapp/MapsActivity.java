@@ -1,9 +1,11 @@
 package com.example.rubendario.islanzapp;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.view.MotionEventCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.internal.view.menu.ActionMenuItemView;
@@ -11,10 +13,13 @@ import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -53,6 +58,7 @@ public class MapsActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         //bar = this.getSupportActionBar();
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.ic_launcher);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -61,9 +67,8 @@ public class MapsActivity extends ActionBarActivity {
                 .obtainTypedArray(R.array.nav_drawer_icons);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-
+        mDrawerLayout.setScrimColor(getResources().getColor(android.R.color.transparent));
         navDrawerItems = new ArrayList<NavDrawerItem>();
-
 
         navDrawerItems.add(new NavDrawerItem("", navMenuIcons.getResourceId(0, -1)));
         // Find People
@@ -115,6 +120,8 @@ public class MapsActivity extends ActionBarActivity {
                 return true;
             case R.id.action_Bitacora:
                 Toast.makeText(MapsActivity.this, getString(R.string.action_Bitacora), Toast.LENGTH_SHORT).show();
+                Intent list = new Intent(this, BinnacleList.class);
+                startActivity(list);
                 return true;
             case R.id.action_settings:
                 /*PopupMenu popup = new PopupMenu(bar.getThemedContext(), findViewById(R.id.action_settings));
@@ -281,12 +288,14 @@ public class MapsActivity extends ActionBarActivity {
         }
     }
 
-    /**
-     * This is where we can add markers or lines, add listeners or move the camera. In this case, we
-     * just add a marker near Africa.
-     * <p/>
-     * This should only be called once and when we are sure that {@link #mMap} is not null.
-     */
+
+
+        /**
+         * This is where we can add markers or lines, add listeners or move the camera. In this case, we
+         * just add a marker near Africa.
+         * <p/>
+         * This should only be called once and when we are sure that {@link #mMap} is not null.
+         */
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
