@@ -29,10 +29,15 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -96,7 +101,9 @@ public class MapsActivity extends ActionBarActivity {
    //     bar.show();
         setUpMapIfNeeded();
         //mMap.setMyLocationEnabled(true);
-        onMapReady(mMap);
+        //mMap.clear();
+        //onMapReady(mMap);
+
     }
 
     @Override
@@ -114,6 +121,8 @@ public class MapsActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case R.id.search_button:
                 Toast.makeText(MapsActivity.this, getString(R.string.action_search), Toast.LENGTH_SHORT).show();
+                Intent ListSearch = new Intent(this, SearchableActivity.class);
+                startActivity(ListSearch);
                 return true;
             case R.id.action_moderador:
                 Toast.makeText(MapsActivity.this, getString(R.string.action_moderador), Toast.LENGTH_SHORT).show();
@@ -153,10 +162,19 @@ public class MapsActivity extends ActionBarActivity {
 
     //@Override
     public void onMapReady(GoogleMap map) {
-        LatLng lanzarote = new LatLng(29.0386277,-13.6504782);
-        map.clear();
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(lanzarote, 10));
 
+
+
+        LatLng lanzarote = new LatLng(29.0386277,-13.6504782);
+        //map.clear();
+        CameraUpdate camera = CameraUpdateFactory.newLatLng(lanzarote);
+        CameraPosition startCameraPosition = new CameraPosition.Builder()
+                .bearing( 0.0f )
+                .target(lanzarote).build();
+        CameraUpdate zoom=CameraUpdateFactory.zoomTo(10);
+
+        map.moveCamera(camera);
+        map.animateCamera(zoom);
         map.addMarker(new MarkerOptions()
                 .title("Lanzarote")
                 .snippet(getString(R.string.message))
@@ -277,6 +295,7 @@ public class MapsActivity extends ActionBarActivity {
      */
     private void setUpMapIfNeeded() {
         // Do a null check to confirm that we have not already instantiated the map.
+        MapsInitializer.initialize(this);
         if (mMap == null) {
             // Try to obtain the map from the SupportMapFragment.
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
@@ -297,6 +316,12 @@ public class MapsActivity extends ActionBarActivity {
          * This should only be called once and when we are sure that {@link #mMap} is not null.
          */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+        MapsInitializer.initialize(this);
+        onMapReady(mMap);
+           // MapsInitializer.initialize(this);
+
+        // Do a null check to confirm that we have not already instantiated the map.
+
+        //mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
 }

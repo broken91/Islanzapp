@@ -17,31 +17,72 @@
     <string name="Action_turorial">Tutorial</string>
     <string name="Action_language">Language</string>
     <string name="No_data">No Data</string>
+    <string name="search_label">Search</string>
+    <string name="search_hint">Search Names</string>
 
     <string name="message">The most beautiful island on the world</string>
 
+    <string name="stops">30:Stops</string>
+
     <string-array name="header_items">
-        <item>Museums</item>
-        <item>Beaches</item>
-        <item>Interesting Places</item>
+        <item>Tourism Places</item>
+        <item>Routes</item>
+        <item>Hotels</item>
     </string-array>
 
-    <string-array name="child_museums">
-        <item>Architecture Museum</item>
-        <item>Future Museum</item>
-        <item>Dog Museum</item>
+    <string-array name="child_1">
+        <item>Charco del Palo</item>
+        <item>Costa Teguise</item>
+        <item>Faro de Punta Pechiguera</item>
+        <item>Playa Blanca</item>
+        <item>Puerto Calero</item>
+        <item>Puerto del Carmen</item>
+        <item>Teguise</item>
     </string-array>
 
-    <string-array name="child_beaches">
-        <item>La Loca Beach</item>
-        <item>Blanca Beach</item>
-        <item>Dog Beach</item>
+    <string-array name="child_2">
+        <item>30: Playa Blanca</item>
     </string-array>
 
-    <string-array name="child_places">
-        <item>Ice cream shop</item>
-        <item>Main Square</item>
-        <item>Market</item>
+    <string-array name="child_3">
+        <item>Hotel 1</item>
+        <item>Hotel 2</item>
+        <item>Hotel 3</item>
+    </string-array>
+
+    <string-array name="stops_30">
+        <item>Casas del Sol</item>
+        <item>Playa Limones</item>
+        <item>Las Margaritas</item>
+        <item>La Perla 1</item>
+        <item>Colegio</item>
+        <item>El Pueblito</item>
+        <item>Virginia Park</item>
+        <item>Jardín del Sol</item>
+        <item>Bajo los Riscos</item>
+        <item>Los Arcos</item>
+        <item>La Goleta 1</item>
+        <item>Faro Park</item>
+        <item>La Goleta 2</item>
+        <item>Rubicón Palace</item>
+        <item>Natura Palace</item>
+        <item>Volcanes 1</item>
+        <item>Volcanes 2</item>
+        <item>Flamingo</item>
+        <item>Muelle de Playa Blanca</item>
+        <item>Estación Sur</item>
+        <item>Marcastell</item>
+        <item>Playa Dorada</item>
+        <item>Marina Rubicón</item>
+        <item>Ciudad Jardín 1</item>
+        <item>San Marcial 1</item>
+        <item>Las Coloradas</item>
+        <item>San Marcial 2</item>
+        <item>Ciudad Jardín 2</item>
+        <item>Castillo del Águila</item>
+        <item>Princesa Yaiza</item>
+        <item>C.C. Papagayo</item>
+        <item>Sun Beach</item>
     </string-array>
 
 
